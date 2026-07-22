@@ -1,0 +1,199 @@
+.table-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 30px 80px rgba(14, 36, 70, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.table-scroll {
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.users-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid rgba(206, 223, 237, 0.95);
+  background: rgba(248, 251, 255, 0.98);
+}
+
+.users-table th,
+.users-table td {
+  position: relative;
+  height: 58px;
+  padding: 0 18px;
+  border-right: 1px solid rgba(207, 222, 235, 0.9);
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.users-table th:last-child,
+.users-table td:last-child {
+  border-right: 0;
+}
+
+.users-table tbody tr {
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+.user-row {
+  cursor: pointer;
+}
+
+.user-row:hover,
+.user-row:focus {
+  background: rgba(22, 137, 242, 0.08);
+  outline: none;
+}
+
+.users-table td {
+  border-bottom: 1px solid rgba(222, 231, 239, 0.95);
+  color: #1e3a57;
+}
+
+.sort-button {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-weight: 800;
+  padding: 0 8px;
+  text-align: left;
+}
+
+.sort-button span:first-child {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sort-button:not(.is-static) {
+  cursor: pointer;
+}
+
+.sort-button.is-static {
+  cursor: default;
+}
+
+.is-sorted {
+  background: rgba(22, 137, 242, 0.12) !important;
+}
+
+.is-sorted .sort-button {
+  color: var(--accent-dark);
+}
+
+.sort-icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: #c5cfd8;
+  transition: all 0.2s ease;
+}
+
+.is-sorted .sort-icon {
+  color: var(--accent-dark);
+  font-size: 1.3rem;
+}
+
+.sort-button:not(.is-static):hover .sort-icon {
+  color: var(--accent);
+  transform: scale(1.15);
+}
+
+.is-sorted.asc .sort-icon {
+  animation: arrowUp 0.3s ease;
+}
+
+.is-sorted.desc .sort-icon {
+  animation: arrowDown 0.3s ease;
+}
+
+@keyframes arrowUp {
+  0% {
+    transform: translateY(4px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes arrowDown {
+  0% {
+    transform: translateY(-4px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.state-message {
+  display: flex;
+  min-height: 190px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--muted);
+  font-weight: 800;
+  white-space: normal;
+}
+
+.error-message {
+  margin: 22px;
+  min-height: 120px;
+  border: 1px solid rgba(179, 38, 30, 0.22);
+  border-radius: 16px;
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(15, 139, 141, 0.18);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .table-scroll {
+    max-height: 60vh;
+  }
+}
