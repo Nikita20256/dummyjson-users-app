@@ -97,6 +97,22 @@
   cursor: default;
 }
 
+.resize-handle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  cursor: col-resize;
+  z-index: 3;
+  user-select: none;
+}
+
+.resize-handle:hover,
+.resize-handle:active {
+  background: rgba(22, 137, 242, 0.2);
+}
+
 .is-sorted {
   background: rgba(22, 137, 242, 0.12) !important;
 }

@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react';
 import Filters from './components/Filters/Filters.jsx';
 import UserModal from './components/Modal/UserModal.jsx';
 import Pagination from './components/Pagination/Pagination.jsx';
@@ -6,16 +7,26 @@ import { useUsers } from './hooks/useUsers.js';
 import './App.css';
 
 const INITIAL_COLUMN_WIDTHS = {
-  lastName: 12,
-  firstName: 12,
-  maidenName: 12,
-  age: 11,
-  gender: 10,
-  phone: 15,
-  email: 16,
-  country: 7,
-  city: 5,
+  lastName: 120,
+  firstName: 120,
+  maidenName: 120,
+  age: 100,
+  gender: 100,
+  phone: 140,
+  email: 160,
+  country: 100,
+  city: 100,
 };
+
+function getColumnWidthsAsPercent(widths) {
+  const total = Object.values(widths).reduce((sum, w) => sum + w, 0);
+  if (total === 0) return widths;
+  const result = {};
+  for (const [key, value] of Object.entries(widths)) {
+    result[key] = (value / total) * 100;
+  }
+  return result;
+}
 
 function App() {
   const {
@@ -38,6 +49,17 @@ function App() {
     openModal,
     closeModal,
   } = useUsers();
+
+  const [rawColumnWidths, setRawColumnWidths] = useState(INITIAL_COLUMN_WIDTHS);
+
+  const handleColumnResize = useCallback((key, newWidth) => {
+    setRawColumnWidths((prev) => ({
+      ...prev,
+      [key]: Math.max(50, newWidth),
+    }));
+  }, []);
+
+  const columnWidths = getColumnWidthsAsPercent(rawColumnWidths);
 
   const activeFilters = Object.values(filters).filter((value) => String(value).trim() !== '').length;
 
@@ -62,9 +84,11 @@ function App() {
         error={error}
         sortField={sortField}
         sortOrder={sortOrder}
-        columnWidths={INITIAL_COLUMN_WIDTHS}
+        columnWidths={columnWidths}
         onSort={changeSort}
         onRowClick={openModal}
+        onColumnResize={handleColumnResize}
+        rawColumnWidths={rawColumnWidths}
       />
 
       <Pagination

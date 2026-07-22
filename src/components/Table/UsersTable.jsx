@@ -12,6 +12,8 @@ function UsersTable({
   columnWidths,
   onSort,
   onRowClick,
+  onColumnResize,
+  rawColumnWidths,
 }) {
   const columnCount = tableColumns.length;
 
@@ -21,9 +23,11 @@ function UsersTable({
         <table className="users-table">
           <TableHeader
             columnWidths={columnWidths}
+            rawColumnWidths={rawColumnWidths}
             sortField={sortField}
             sortOrder={sortOrder}
             onSort={onSort}
+            onColumnResize={onColumnResize}
           />
           <tbody>
             {loading && (
