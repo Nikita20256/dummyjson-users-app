@@ -1,0 +1,4 @@
+Deployment trigger file
+Created: 22 июля 2026
+User: Nikita20256
+Purpose: force GitHub Actions run to deploy to GitHub Pages
