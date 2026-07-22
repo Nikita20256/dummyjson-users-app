@@ -29,12 +29,10 @@ git commit -m "Initial commit: DummyJSON Users Management App"
 После создания репозитория, GitHub покажет инструкции. Запустите:
 
 ```bash
-git remote add origin https://github.com/ВАШ_ЛОГИН/dummyjson-users-app.git
+git remote add origin https://github.com/Nikita20256/dummyjson-users-app.git
 git branch -M main
 git push -u origin main
 ```
-
-Замените `ВАШ_ЛОГИН` на ваш GitHub username.
 
 ## Шаг 5: Настроить GitHub Pages
 
@@ -100,7 +98,7 @@ git push
 2. Нажать на вкладку **Actions**
 3. Дождаться завершения workflow (зелёная галочка ✓)
 4. Перейти в **Settings** → **Pages**
-5. Найти ссылку на развернутое приложение: `https://ВАШ_ЛОГИН.github.io/dummyjson-users-app/`
+5. Найти ссылку на развернутое приложение: `https://Nikita20256.github.io/dummyjson-users-app/`
 
 ## Ссылки
 

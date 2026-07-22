@@ -18,8 +18,8 @@
    - Visibility: Public
    - Create repository
 
-3️⃣  ПОДКЛЮЧИТЬ И ОТПРАВИТЬ КОД
-   git remote add origin https://github.com/ВАШ_ЛОГИН/dummyjson-users-app.git
+3️⃣  ЗАПУСТИТЬ КОМАНДЫ
+    git remote add origin https://github.com/Nikita20256/dummyjson-users-app.git
    git branch -M main
    git push -u origin main
 
@@ -31,11 +31,7 @@
    - Перейти на Actions вкладку
    - Дождаться зелёной галочки
    - Приложение будет доступно по ссылке:
-     https://ВАШ_ЛОГИН.github.io/dummyjson-users-app/
-
-⚠️  ВАЖНО:
-   - Замените ВАШ_ЛОГИН на свой GitHub username
-   - Убедитесь, что репозиторий PUBLIC
+      https://Nikita20256.github.io/dummyjson-users-app/
    - В Settings → Actions включена возможность запуска workflows
 
 📚 ДОПОЛНИТЕЛЬНО:
@@ -47,5 +43,12 @@
    - GitHub Pages: https://pages.github.com
    - GitHub Actions: https://docs.github.com/en/actions
 
-❓ ВОПРОСЫ?
-   Используйте DEPLOYMENT_GUIDE.md - там есть решение для частых проблем!
+⚠️  ВАЖНО:
+   - Убедитесь, что репозиторий PUBLIC
+   - В Settings → Actions включена возможность запуска workflows
+
+📚 ДОПОЛНИТЕЛЬНО:
+   - Смотрите DEPLOYMENT_GUIDE.md для подробных инструкций
+   - Смотрите README.md для описания функций приложения
+
+🔗 ССЫЛКИ:
