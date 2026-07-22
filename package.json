@@ -1,4 +1,9 @@
 {
+  "name": "dummyjson-users-app",
+  "private": true,
+  "version": "0.0.0",
+  "homepage": "https://nikita20256.github.io/dummyjson-users-app/",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -7,12 +12,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "vite": "^6.0.7"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.3.0",
+    "vite": "^6.0.7"
   }
 }
